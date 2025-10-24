@@ -541,12 +541,17 @@ Tabs.Misc:Button({
 })
 
 -- ==== BUTTON ESP ==== --
-local esp = Tabs.Misc:Button({
+local esp = Tabs.Misc:Toggle({
     Title = "Esp Box 3D",
     Desc = "memunculkan kotak esp + anthena",
     Locked = false,
-    Callback = function(state) 
+    Callback = function(state)
         loadstring(game:HttpGet("https://raw.githubusercontent.com/GarapMD/ESP-BOX-HIJAU-ANTHENA/refs/heads/main/ESP%20BOX%20HIJAU%20ANTHENA"))()
+        if state then
+            print("[WindUI] esp: ON")
+        else
+            print("[WindUI] esp: OFF")
+        end
     end
 })
 
@@ -1435,4 +1440,5 @@ if Window:GetUnlocked() and #Window:GetUnlocked() > 0 then
         print("- " .. (title or "Unknown"))
     end
     
+
 end
